@@ -20,13 +20,17 @@ public class PlayerMovmentControl : MonoBehaviour {
             fishBodySprite = bodyTransform.GetComponent<SpriteRenderer>();
         }
     }
-    void FixedUpdate() {
-        HandleMovement();
-
+     void Update()
+    {
         // Check for Space Bar using the New Input System
         if (Keyboard.current.spaceKey.wasPressedThisFrame) {
             bite.ActiveBite(direction);
         }
+    }
+    void FixedUpdate() {
+        HandleMovement();
+
+        
     }
     void HandleMovement()
     {
